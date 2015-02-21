@@ -1,0 +1,7 @@
+{% if DISQUS_SITENAME and article.status != "draft" %}
+<div class="comments">
+	<h3>Comments</h3>
+	<div id="disqus_thread"></div>
+	{% include 'includes/disqus_embed.html' %}
+</div>
+{% endif %}
