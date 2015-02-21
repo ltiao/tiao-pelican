@@ -5,10 +5,10 @@ tiao Pelican Theme
 A meticulously designed Pelican theme built with Bootstrap3.
 
 Settings
---------
+========
 
 ``DISPLAY_PAGES_ON_SIDE``
-*************************
+-------------------------
 
 In addition to ``DISPLAY_PAGES_ON_MENU``, which gives you the
 option to display pages on the top-right navigation menu, we
@@ -31,7 +31,7 @@ navigation menu.
 +---------------------------+---------------------------+----------------------+
 
 License
--------
+=======
 
 The MIT License (MIT)
 
