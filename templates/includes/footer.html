@@ -3,10 +3,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              {% include "includes/social.html" %}
+              <h4 class="text-muted">Social</h4>
+              <ul class="nav nav-pills">
+                {% include "includes/social.html" %}
+              </ul>
             </div> <!-- /col -->
             <div class="col-md-6">
-              <h4>Blogroll</h4>
+              <h4 class="text-muted">Links</h4>
               <ul class="nav nav-pills">
               {% for title, link in LINKS %}
                 <li role="presentation">

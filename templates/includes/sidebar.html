@@ -1,0 +1,30 @@
+<ul class="nav nav-pills nav-stacked">
+  {% if DISPLAY_MENUITEMS_ON_MENU|default(True) %}
+    {% include "includes/links/menuitem_links.html" %}
+  {% endif %}
+  {% if DISPLAY_PAGES_ON_MENU %}
+    {% include "includes/links/page_links.html" %}
+  {% endif %}
+  {% if DISPLAY_CATEGORIES_ON_MENU %}
+  <li class="disabled">
+    <a style="cursor: default;">
+      <strong>
+        <small>
+          <span class="text-uppercase">
+            Articles
+          </span>
+        </small>
+      </strong>
+    </a>
+  </li>
+  {% for cat, null in categories %}
+  <li {% if cat == category %}class="active"{% endif %}>
+    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+  </li>
+  {% endfor %}
+  {% endif %}
+</ul> <!-- /nav -->
+<hr>
+<div class="well">
+  {{ output_file }}
+</div> <!-- /well -->

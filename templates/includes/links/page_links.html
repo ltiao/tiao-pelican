@@ -1,0 +1,10 @@
+{% for p in PAGES %}
+<li role="presentation" {% if p == page %} class="active"{% endif %}>
+  <a href="{{ SITEURL }}/{{ p.url }}">
+    {% if p.icon %}
+      <i class="fa fa-{{ p.icon }}"></i>
+    {% endif %}
+    <span>{{ p.menulabel|default(p.title) }}</span>
+  </a>
+</li>
+{% endfor %}

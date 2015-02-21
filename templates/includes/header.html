@@ -3,23 +3,12 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
           <div class="page-header">
             <ul class="nav nav-pills pull-right">
-              <li>{% include "includes/links/home_link.html" %}</li>
+              {% include "includes/links/home_links.html" %}
               {% if DISPLAY_MENUITEMS_ON_TOP and not DISPLAY_MENUITEMS_ON_MENU %}
-                {% for title, link in MENUITEMS %}
-                  <li>{% include "includes/links/menuitem_link.html" %}</li>
-                {% endfor %}
+                {% include "includes/links/menuitem_links.html" %}
               {% endif %}
               {% if DISPLAY_PAGES_ON_TOP and not DISPLAY_PAGES_ON_MENU %}
-              {% for p in PAGES %}
-              <li role="presentation" {% if p == page %} class="active"{% endif %}>
-                <a href="{{ SITEURL }}/{{ p.url }}">
-                  {% if p.icon %}
-                  <i class="fa fa-{{ p.icon }}"></i>
-                  {% endif %}
-                 <span>{{ p.menulabel|default(p.title) }}</span>
-                </a>
-              </li>
-              {% endfor %}
+                {% include "includes/links/page_links.html" %}
               {% endif %}
               <li>
                 <a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">
