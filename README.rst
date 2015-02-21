@@ -13,7 +13,7 @@ The Tiao pelican theme honors the following Pelican settings:
 
 It also introduces the following settings
 
-* ``DISPLAY_PAGES_ON_SIDE``
+* ``DISPLAY_PAGES_ON_TOP`` (Default: ``False``)
 
   In addition to ``DISPLAY_PAGES_ON_MENU``, which gives you the
   option to display pages on the top-right navigation menu, we
@@ -23,17 +23,26 @@ It also introduces the following settings
   on both menus. Instead, we only display it on the top-right 
   navigation menu.
 
-  +---------------------------+---------------------------+----------------------+
-  | ``DISPLAY_PAGES_ON_MENU`` | ``DISPLAY_PAGES_ON_SIDE`` |       Behavior       |
-  +===========================+===========================+======================+
-  | False                     | False                     | Not displayed at all |
-  +---------------------------+---------------------------+----------------------+
-  | False                     | True                      | Displayed on Sidebar |
-  +---------------------------+---------------------------+----------------------+
-  | True                      | False                     | Displayed on Menu    |
-  +---------------------------+---------------------------+----------------------+
-  | True                      | True                      | Displayed on Menu    |
-  +---------------------------+---------------------------+----------------------+
+  +-----------------------+----------------------+------------------------+
+  | ``DISPLAY_*_ON_MENU`` | ``DISPLAY_*_ON_TOP`` |        Behavior        |
+  +=======================+======================+========================+
+  | False                 | False                | Not displayed at all   |
+  +-----------------------+----------------------+------------------------+
+  | False                 | True                 | Displayed on Top Menu  |
+  +-----------------------+----------------------+------------------------+
+  | True                  | False                | Displayed on Side Menu |
+  +-----------------------+----------------------+------------------------+
+  | True                  | True                 | Displayed on Side Menu |
+  +-----------------------+----------------------+------------------------+
+
+* ``DISPLAY_MENUITEMS_ON_MENU`` (Default: ``False``)
+
+  Similar to ``DISPLAY_PAGES_ON_MENU``. Introduced to provide 
+  options for placement of menu items.
+
+* ``DISPLAY_MENUITEMS_ON_TOP`` (Default: ``False``)
+
+  Similar to ``DISPLAY_PAGES_ON_TOP``.
 
 License
 =======
