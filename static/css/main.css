@@ -5,9 +5,10 @@
    ========================================================================== */
 
 body { 
-  background-image: url("../img/white_wall_hash_@2X.png"); 
+  background-image: url("../img/white_wall_hash_@2X.png");
+  background-color: #f3f3f3;
 }
 
 .footer {
-  background-color: #ffffff
+  background-color: #ffffff;
 }

@@ -10,11 +10,19 @@
       </a>
     </h2>
 
+    {% if page.toc %}
+    <div class="well">
+      <nav class="toc">
+      {{ page.toc }}
+      </nav>
+    </div>
+    {% endif %}
+
     {% import 'translations.html' as translations with context %}
     {{ translations.translations_for(page) }}
 
     {{ page.content }}
   </div> <!-- /panel-body -->
-  <div class="panel-footer">Panel footer</div>
+  <!-- <div class="panel-footer">Panel footer</div> -->
 </div> <!-- /panel -->
 {% endblock %}

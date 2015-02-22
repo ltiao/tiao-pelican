@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for article in (articles_page.object_list if articles_page else articles) %}
 <div class="panel panel-default">
-  <div class="panel-body">
-    <h4>
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">
-      {{ article.title }}
-      </a>
-    </h4>
-    {{ article.summary }}
-  </div> <!-- /panel-body -->
+  <ul class="list-group">
+    {% for article in (articles_page.object_list if articles_page else articles) %}
+    <li class="list-group-item">
+      <h4>
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+           title="Permalink to {{ article.title|striptags }}">
+        {{ article.title }}
+        </a>
+      </h4>
+      {{ article.summary }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% if DEFAULT_PAGINATION and articles_paginator.num_pages > 1 %}
+  <div class="panel-footer">
+    {% include "includes/pagination.html" %}
+  </div>
+  {% endif %}
 </div> <!-- /panel -->
-<hr>
-{% endfor %}
-
-{% include "includes/pagination.html" %}
 
 {% endblock content %}
