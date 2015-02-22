@@ -19,9 +19,6 @@ the elements of the existing themes to have a clear concept
 of the design, and sufficiently experienced with Bootstrap to 
 implement the design. 
 
-In particular, I borrowed the color palette from `blueidea 
-<https://github.com/blueicefield/pelican-blueidea/>`_, 
-
 Settings
 ========
 
