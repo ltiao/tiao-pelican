@@ -10,17 +10,17 @@ About
 When I first started using Pelican, I wanted to personalize 
 my site with `Pelican Themes <http://pelicanthemes.com/>`_.
 While I liked elements from many themes, I was ultimately
-disappointed not to find any theme that suited my needs,
-which is why I decided to roll out my own.
+disappointed not to find any theme that suited my needs.
+This prompted me to write my own.
 
 I should remark that I am not a web designer in any way, let 
-alone a front-end developer, but I was sufficiently inspired 
-by the elements of the existing themes to have a clear concept 
+alone a front-end developer. I was sufficiently inspired by 
+the elements of the existing themes to have a clear concept 
 of the design, and sufficiently experienced with Bootstrap to 
 implement the design. 
 
-I borrowed the color palette from `blueidea <https://github.com/
-blueicefield/pelican-blueidea/>`_
+In particular, I borrowed the color palette from `blueidea 
+<https://github.com/blueicefield/pelican-blueidea/>`_, 
 
 Settings
 ========
