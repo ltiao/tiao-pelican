@@ -1,8 +1,31 @@
-{% for title, link, icon in SOCIAL %}
-  {% set iconattributes = '"fa fa-' ~ icon ~ ' fa-lg"' %}
-	<li role="presentation">
-    <a href="{{ link }}">
-      <i class={{ iconattributes }}></i> {{ title }}
-    </a>
-  </li>
+{% set fa_icons = {'facebook': 'facebook-square',
+                 'twitter': 'twitter-square',
+                 'linkedin': 'linkedin-square',
+                 'github': 'github-square',
+                 'tumblr': 'tumblr-square',
+                 'youtube': 'youtube-square',
+                 'google+': 'google-plus-square',
+                 'google-plus': 'google-plus-square',
+                 'behance': 'behance-square',
+                 'pinterest': 'pinterest-square',
+                 'vimeo': 'vimeo-square',
+                 'lastfm': 'lastfm-square',
+                 'reddit': 'reddit-square',
+                 'steam': 'steam-square',
+                 'bitbucket': 'bitbucket-square',
+                 'xing': 'xing-square',
+                 'email': 'envelope-square'} %}
+{% for title, link in SOCIAL %}
+{% if fa_icons[title|lower|replace(" ", "-")] %}
+  {% set icon = fa_icons[title|lower|replace(" ", "-")] %}
+{% else %}
+  {% set icon = title|lower|replace(" ", "-") %}
+{% endif %}
+
+{% if SOCIAL_ICONS %}
+  {% if SOCIAL_ICONS[title] %}
+    {% set icon = SOCIAL_ICONS[title] %}
+  {% endif %}
+{% endif %}
+<a href="{{ link }}" title="{{ title }}"><i id="social" class="fa fa-{{ icon }} fa-3x"></i></a>
 {% endfor %}

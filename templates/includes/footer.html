@@ -2,37 +2,33 @@
         <hr>
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <h4 class="text-muted">Social</h4>
-              <ul class="nav nav-pills">
-                {% include "includes/social.html" %}
-              </ul>
-            </div> <!-- /col -->
-            <div class="col-md-6">
-              <h4 class="text-muted">Links</h4>
-              <ul class="nav nav-pills">
-              {% for title, link in LINKS %}
-                <li role="presentation">
-                  <a href="{{ link }}">{{ title }}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            </div> <!-- /col -->
+            <p class="text-center">
+              {% include "includes/social.html" %}
+            </p>
+          </div>
+          <div class="row">
+            <h4 class="text-muted">Links</h4>
+            {% for links_col in LINKS|slice(3) %}
+              <div class="col-md-2">
+                {% for title, link in links_col %}
+                <small><a class"text-underline" href="{{ link }}">{{ title }}</a></small>
+                <br>
+                {% endfor %}
+              </div> <!-- /col -->
+            {% endfor %}
           </div> <!-- /row -->
           <div class="row">
-            <div class="col-md-10">
-              <small>
-                Copyright &copy; {{ AUTHOR }} {{ articles[0].date.strftime('%Y') }}  
-                &middot; Proudly powered by <a href="http://getpelican.com/">Pelican</a> 
-                and <a href="http://python.org/">Python</a>
-                &middot; Theme <a href="http://github.com/ltiao/tiao-pelican">tiao-pelican</a> 
-                built with <a href="http://getbootstrap.com/">Bootstrap 3</a>
-                by <a href="https://github.com/ltiao/">ltiao</a>.
-              </small>
-              <p class="pull-right">
-                <a href="#">Back to top</a>
-              </p>
-            </div>
+            <p class="pull-right">
+              <a href="#">Back to top</a>
+            </p>
+            <small>
+              Copyright &copy; {{ AUTHOR }} {{ articles[0].date.strftime('%Y') }}  
+              &middot; Proudly powered by <a href="http://getpelican.com/">Pelican</a> 
+              and <a href="http://python.org/">Python</a>
+              &middot; Theme <a href="http://github.com/ltiao/tiao-pelican">tiao</a> 
+              built with <a href="http://getbootstrap.com/">Bootstrap 3</a>
+              by <a href="https://github.com/ltiao/">Louis Tiao</a>.
+            </small>          
           </div> <!-- /row -->
         </div> <!-- /container -->
       </footer>
